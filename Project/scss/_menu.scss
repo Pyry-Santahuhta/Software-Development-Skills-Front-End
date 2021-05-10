@@ -1,0 +1,34 @@
+@import "config";
+.menu-button {
+  position: absolute;
+  z-index: 3;
+  right: 35px;
+  top: 35px;
+  cursor: pointer;
+  @include easeOut;
+  .button-line {
+    width: 30px;
+    height: 3px;
+    border-radius: 2px;
+    margin: 0 0 5px 0;
+    background: $primary-text-color;
+    @include easeOut;
+  }
+
+  //rotate into x
+  &.close {
+    transform: rotate(90deg);
+
+    .button-line {
+      &:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+      }
+      &:nth-child(2) {
+        opacity: 0;
+      }
+      &:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -6px);
+      }
+    }
+  }
+}
