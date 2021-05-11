@@ -62,9 +62,6 @@
     list-style: none;
     transform: translate3d(0, -100%, 0);
     @include easeOut;
-    &-link {
-      color: black;
-    }
     &.show {
       transform: translate3d(0, 0, 0);
     }
