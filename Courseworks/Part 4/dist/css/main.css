@@ -1,0 +1,194 @@
+.menu-button {
+  position: absolute;
+  z-index: 3;
+  right: 35px;
+  top: 35px;
+  cursor: pointer;
+  transition: all 0.4s ease-out; }
+  .menu-button .button-line {
+    width: 30px;
+    height: 3px;
+    border-radius: 2px;
+    margin: 0 0 5px 0;
+    background: #f3f7f0;
+    transition: all 0.4s ease-out; }
+  .menu-button.close {
+    transform: rotate(90deg); }
+    .menu-button.close .button-line:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px); }
+    .menu-button.close .button-line:nth-child(2) {
+      opacity: 0; }
+    .menu-button.close .button-line:nth-child(3) {
+      transform: rotate(-45deg) translate(7px, -6px); }
+
+.menu {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  opacity: 1;
+  visibility: hidden; }
+  .menu.show {
+    visibility: visible; }
+  .menu-brand, .menu-navigation {
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    justify-content: center;
+    float: left;
+    width: 50%;
+    height: 100vh;
+    overflow: hidden; }
+  .menu-navigation {
+    margin: 0;
+    padding: 0;
+    background: #12232a;
+    list-style: none;
+    transform: translate3d(0, -100%, 0);
+    transition: all 0.4s ease-out; }
+    .menu-navigation-link {
+      color: black; }
+    .menu-navigation.show {
+      transform: translate3d(0, 0, 0); }
+  .menu-brand {
+    background: #19323c;
+    transform: translate3d(0, 100%, 0);
+    transition: all 0.4s ease-out; }
+    .menu-brand.show {
+      transform: translate3d(0, 0, 0); }
+    .menu-brand .portrait-image {
+      width: 250px;
+      height: 250px;
+      background: url(../img/portrait.jpg);
+      border-radius: 50%;
+      border: solid 3px #f2545b; }
+  .menu .navigation-item {
+    transform: translate3d(2000px, 0, 0);
+    transition: all 0.4s ease-out; }
+    .menu .navigation-item.show {
+      transform: translate3d(0, 0, 0); }
+    .menu .navigation-item.current > a {
+      color: #f2545b; }
+  .menu .navigation-link {
+    display: inline-block;
+    position: relative;
+    font-size: 2rem;
+    text-transform: uppercase;
+    padding: 1rem 0;
+    font-weight: 300;
+    color: #f3f7f0;
+    text-decoration: none;
+    transition: all 0.4s ease-out; }
+    .menu .navigation-link:hover {
+      color: #f2545b; }
+
+.navigation-item:nth-child(1) {
+  transition-delay: 0.1s; }
+
+.navigation-item:nth-child(2) {
+  transition-delay: 0.2s; }
+
+.navigation-item:nth-child(3) {
+  transition-delay: 0.3s; }
+
+.navigation-item:nth-child(4) {
+  transition-delay: 0.4s; }
+
+@media screen and (max-width: 768px) {
+  main#home h1 {
+    font-size: 4rem; }
+  main {
+    align-items: center;
+    text-align: center; }
+    main .large-heading {
+      line-height: 1;
+      margin-bottom: 1rem; }
+  div.menu-brand {
+    height: 25vh;
+    transform: translate3d(-100%, 0, 0); }
+    div.menu-brand .portrait-image {
+      background: url(../img/portraitsmall.jpg) repeat 0 0;
+      width: 150px;
+      height: 150px; }
+  ul.menu-navigation {
+    height: 75vh;
+    transform: translate3d(100%, 0, 0); }
+  ul.menu-navigation,
+  div.menu-brand {
+    float: none;
+    width: 100%;
+    min-height: 0; }
+    ul.menu-navigation.show,
+    div.menu-brand.show {
+      transform: translate3d(0, 0, 0); } }
+
+@media screen and (max-width: 500px) {
+  main#home h1 {
+    margin-top: 10vh;
+    font-size: 3.5rem; } }
+
+body {
+  background-color: #19323c;
+  color: #f3f7f0;
+  height: 100%;
+  margin: 0;
+  font-family: "Bebas", "Courier New", sans-serif;
+  line-height: 1.5; }
+  body#bg-img {
+    background: url(../img/background.jpg);
+    background-attachment: fixed;
+    background-size: cover; }
+    body#bg-img:after {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      background: rgba(25, 50, 60, 0.5); }
+
+* {
+  box-sizing: border-box; }
+
+main {
+  padding: 4rem;
+  height: 100%; }
+  main .icons {
+    margin-top: 2rem; }
+    main .icons a {
+      padding: 0.5rem; }
+      main .icons a:hover {
+        color: #f2545b;
+        transition: all 0.4s ease-out; }
+  main#home {
+    overflow: hidden; }
+    main#home h1 {
+      margin-top: 25vh; }
+
+h1,
+h2,
+h3 {
+  margin: 0;
+  font-weight: 400; }
+  h1.large-heading,
+  h2.large-heading,
+  h3.large-heading {
+    font-size: 5rem; }
+  h1.small-heading,
+  h2.small-heading,
+  h3.small-heading {
+    margin-bottom: 2rem;
+    padding: 0rem 2rem;
+    background: rgba(31, 62, 74, 0.5); }
+
+a {
+  text-decoration: none;
+  color: #f3f7f0; }
+
+header {
+  position: fixed;
+  z-index: 2;
+  width: 100%; }
+
+.text-secondary {
+  color: #f2545b; }
