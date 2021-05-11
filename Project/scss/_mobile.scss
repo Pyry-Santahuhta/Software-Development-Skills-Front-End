@@ -1,0 +1,51 @@
+//Widescreens
+@include mediaXL {
+}
+//Desktop
+@include mediaLarge {
+}
+//Tablets
+@include mediaMedium {
+  main#home h1 {
+    font-size: 4rem;
+  }
+  main {
+    align-items: center;
+    text-align: center;
+
+    .large-heading {
+      line-height: 1;
+      margin-bottom: 1rem;
+    }
+  }
+  div.menu-brand {
+    height: 25vh;
+    transform: translate3d(-100%, 0, 0);
+    .portrait-image {
+      background: url(../img/portraitsmall.jpg) repeat 0 0;
+      width: 150px;
+      height: 150px;
+    }
+  }
+  ul.menu-navigation {
+    height: 75vh;
+    transform: translate3d(100%, 0, 0);
+  }
+  ul.menu-navigation,
+  div.menu-brand {
+    float: none;
+    width: 100%;
+    min-height: 0;
+
+    &.show {
+      transform: translate3d(0, 0, 0);
+    }
+  }
+}
+//Smartphones
+@include mediaSmall {
+  main#home h1 {
+    margin-top: 10vh;
+    font-size: 3.5rem;
+  }
+}
