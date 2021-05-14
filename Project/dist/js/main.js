@@ -10,6 +10,7 @@ let showMenu = false;
 
 menuButton.addEventListener('click', toggleMenu);
 
+//Toggle between overlay sets.
 function toggleMenu(){
     if(!showMenu){
         menuButton.classList.add('close');
