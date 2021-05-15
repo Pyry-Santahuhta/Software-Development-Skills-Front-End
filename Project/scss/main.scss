@@ -19,6 +19,7 @@ body {
 
 main {
   padding: 4rem;
+  //Make footer stick to the bottom with this
   min-height: calc(100vh - 60px);
   .icons {
     margin-top: 2rem;
@@ -40,7 +41,6 @@ main {
     }
   }
 }
-
 //Heading styling
 h1,
 h2,
@@ -75,6 +75,7 @@ header {
   color: $secondary-color;
 }
 
+//About page style
 .about-info {
   display: grid;
   gap: 30px;
@@ -121,4 +122,5 @@ header {
   height: 60px;
 }
 
+//Import mobile last so the scaling is done after everything else.
 @import "mobile";
