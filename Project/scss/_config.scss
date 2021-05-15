@@ -1,12 +1,17 @@
+//Variables
 $primary-color: #19323c;
 $secondary-color: #f2545b;
 $primary-text-color: #f3f7f0;
 $show-home-image: true;
 $home-image: url(../img/background.jpg);
 $background-opacity: 0.5;
+
+//Transition mixin
 @mixin easeOut {
   transition: all 0.4s ease-out;
 }
+
+//Background image
 @mixin background {
   @if $show-home-image {
     &#bg-img {
@@ -27,8 +32,17 @@ $background-opacity: 0.5;
   }
 }
 
-//Media query mixins for responsiveness
+//Setting text color
+@function set-text-color($color) {
+  //Changing text color depending on background lightness
+  @if (lightness($color) > 40) {
+    @return #000;
+  } @else {
+    @return $primary-text-color;
+  }
+}
 
+//Media query mixins for responsiveness
 @mixin mediaSmall {
   @media screen and (max-width: 500px) {
     @content;

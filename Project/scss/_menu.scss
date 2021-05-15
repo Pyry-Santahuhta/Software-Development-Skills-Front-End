@@ -1,4 +1,6 @@
 @import "config";
+
+//Hamburger menu
 .menu-button {
   position: absolute;
   z-index: 3;
@@ -11,11 +13,11 @@
     height: 3px;
     border-radius: 2px;
     margin: 0 0 5px 0;
-    background: $primary-text-color;
+    background: set-text-color($primary-color);
     @include easeOut;
   }
 
-  //rotate into x
+  //rotate hamburger menu into x
   &.close {
     transform: rotate(90deg);
 
@@ -33,6 +35,7 @@
   }
 }
 
+//Hide menu when not show
 .menu {
   position: fixed;
   top: 0;
@@ -40,10 +43,12 @@
   opacity: 1;
   visibility: hidden;
 
+  //Get things to show up on menu press
   &.show {
     visibility: visible;
   }
 
+  //Styling both sides of the overlay
   &-brand,
   &-navigation {
     display: flex;
@@ -55,6 +60,8 @@
     height: 100vh;
     overflow: hidden;
   }
+
+  //Nav coming from top to bottom
   &-navigation {
     margin: 0;
     padding: 0;
@@ -62,13 +69,12 @@
     list-style: none;
     transform: translate3d(0, -100%, 0);
     @include easeOut;
-    &-link {
-      color: black;
-    }
     &.show {
       transform: translate3d(0, 0, 0);
     }
   }
+
+  //Branding side coming from bottom up
   &-brand {
     background: $primary-color;
     transform: translate3d(0, 100%, 0);
@@ -86,6 +92,7 @@
     }
   }
 
+  //Nav items coming from right to left
   .navigation-item {
     transform: translate3d(2000px, 0, 0);
     @include easeOut;
@@ -99,6 +106,7 @@
     }
   }
 
+  //Link styling
   .navigation-link {
     display: inline-block;
     position: relative;
@@ -106,7 +114,7 @@
     text-transform: uppercase;
     padding: 1rem 0;
     font-weight: 300;
-    color: $primary-text-color;
+    color: set-text-color($primary-color);
     text-decoration: none;
     @include easeOut;
     &:hover {
@@ -115,6 +123,7 @@
   }
 }
 
+//Go through nav items one by one to slow their appearance
 @for $i from 1 through 4 {
   .navigation-item:nth-child(#{$i}) {
     transition-delay: $i * 0.1s;
