@@ -1,0 +1,214 @@
+@import "config";
+@import "menu";
+
+//Main area styling
+body {
+  @include background;
+  background-color: $primary-color;
+  color: set-text-color($primary-color);
+  height: 100%;
+  margin: 0;
+  font-family: "Bebas", "Courier New", sans-serif;
+  line-height: 1.5;
+}
+
+//Border-box everywhere
+* {
+  box-sizing: border-box;
+}
+
+main {
+  padding: 4rem;
+  //Make footer stick to the bottom with this
+  min-height: calc(100vh - 60px);
+  .icons {
+    margin-top: 2rem;
+
+    //Icon link hover effect
+    a {
+      padding: 0.5rem;
+      &:hover {
+        color: $secondary-color;
+        @include easeOut();
+      }
+    }
+  }
+
+  &#home {
+    overflow: hidden;
+    h1 {
+      margin-top: 25vh;
+    }
+  }
+}
+//Heading styling
+h1,
+h2,
+h3 {
+  margin: 0;
+  font-weight: 400;
+
+  &.large-heading {
+    font-size: 5rem;
+  }
+
+  &.small-heading {
+    margin-bottom: 2rem;
+    padding: 0rem 2rem;
+    background: rgba(lighten($primary-color, $amount: 5), 0.5);
+  }
+}
+
+//Link styling
+a {
+  text-decoration: none;
+  color: set-text-color($primary-color);
+}
+
+header {
+  position: fixed;
+  z-index: 2;
+  width: 100%;
+}
+
+.text-secondary {
+  color: $secondary-color;
+}
+
+//About page style
+.about-info {
+  display: grid;
+  gap: 30px;
+  grid-template-areas:
+    "bioimage bio bio"
+    "job1 job2 job3";
+  grid-template-columns: repeat(3, 1fr);
+  text-align: left;
+
+  .bio-image {
+    grid-area: bioimage;
+    margin: auto;
+    border-radius: 50%;
+    border: $secondary-color 3px solid;
+  }
+
+  .bio {
+    display: flex;
+    grid-area: bio;
+    font-size: 1.2rem;
+    align-items: center;
+    justify-items: center;
+  }
+
+  .job {
+    background: lighten($primary-color, 5);
+    border-left: $secondary-color 5px solid;
+    padding-left: 10px;
+  }
+  .job1 {
+    grid-area: job1;
+  }
+
+  .job2 {
+    grid-area: job2;
+  }
+
+  .job3 {
+    grid-area: job3;
+  }
+}
+
+//Projects page style
+.projects {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.7rem;
+  img {
+    width: 100%;
+    border: 3px #fff solid;
+    @include easeOut;
+  }
+  .img-wrap {
+    position: relative;
+    &:hover {
+      img {
+        opacity: 0.3;
+        border-color: $secondary-color;
+      }
+      .project-description {
+        visibility: visible;
+        opacity: 1;
+      }
+    }
+  }
+  .item {
+    position: relative;
+  }
+
+  .project-description {
+    position: absolute;
+    font-weight: bold;
+    visibility: hidden;
+    opacity: 0;
+    top: 25px;
+    bottom: 25px;
+    padding: 10px;
+    @include easeOut;
+  }
+}
+
+.boxes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-top: 1rem;
+  div {
+    font-size: 2rem;
+    border: 3px #fff solid;
+    padding: 1.5rem 2.5rem;
+    margin-bottom: 3rem;
+    @include easeOut;
+
+    &:hover {
+      // padding: 0.5rem 1.5rem;
+      background: $secondary-color;
+      color: set-text-color($secondary-color);
+      span {
+        color: set-text-color($secondary-color);
+      }
+    }
+  }
+}
+
+.button {
+  display: block;
+  padding: 0.5rem 1rem;
+  border: 0;
+  margin-bottom: 0.3rem;
+  text-align: center;
+  &:hover {
+    background: $secondary-color;
+    color: set-text-color($secondary-color);
+  }
+}
+
+.button-light {
+  @extend .button;
+  background: darken($primary-color, 50);
+}
+.button-dark {
+  @extend .button;
+  background: lighten($primary-color, 50);
+}
+
+#main-footer {
+  text-align: center;
+  padding: 1rem;
+  background: darken($primary-color, 10);
+  color: set-text-color($primary-color);
+  height: 60px;
+}
+
+//Import mobile last so the scaling is done after everything else.
+@import "mobile";
