@@ -1,8 +1,19 @@
 //Widescreens
 @include mediaXL {
+  main {
+    align-items: center;
+    text-align: center;
+  }
+  .projects {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
 //Desktop
 @include mediaLarge {
+  main {
+    align-items: left;
+    text-align: left;
+  }
 }
 //Tablets
 @include mediaMedium {
@@ -51,11 +62,27 @@
       "job3";
     grid-template-columns: 1fr;
   }
+  .projects {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .boxes {
+    div {
+      font-size: 1.4rem;
+    }
+  }
 }
 //Smartphones
 @include mediaSmall {
   main#home h1 {
     margin-top: 10vh;
     font-size: 3.5rem;
+  }
+  .projects {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .boxes {
+    div {
+      font-size: 1.2rem;
+    }
   }
 }
