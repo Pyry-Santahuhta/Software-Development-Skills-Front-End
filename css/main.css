@@ -268,7 +268,7 @@ header {
     text-align: left; } }
 
 @media screen and (max-width: 768px) {
-  main#home h1 {
+  main h1 {
     font-size: 4rem; }
   main {
     align-items: center;
@@ -303,12 +303,24 @@ header {
     font-size: 1.4rem; } }
 
 @media screen and (max-width: 500px) {
-  main#home h1 {
+  h1.large-heading,
+  h2.large-heading,
+  h3.large-heading {
     margin-top: 10vh;
     font-size: 2.6rem; }
-  .icons {
+  h1.small-heading,
+  h2.small-heading,
+  h3.small-heading {
     font-size: 1rem; }
+  .about-info {
+    gap: 15px; }
+    .about-info .bio-image {
+      transform: scale(0.8); }
+    .about-info .bio {
+      font-size: 1rem; }
+    .about-info .job {
+      padding-right: 15px; }
   .projects {
     grid-template-columns: repeat(1, 1fr); }
   .boxes div {
-    font-size: 1.2rem; } }
+    font-size: 1rem; } }
