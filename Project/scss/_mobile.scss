@@ -17,8 +17,8 @@
 }
 //Tablets
 @include mediaMedium {
-  main#home h1 {
-    font-size: 4rem;
+  main h1 {
+    font-size: 3rem;
   }
   main {
     align-items: center;
@@ -73,16 +73,42 @@
 }
 //Smartphones
 @include mediaSmall {
-  main#home h1 {
-    margin-top: 10vh;
-    font-size: 3.5rem;
+  h1,
+  h2,
+  h3 {
+    &.large-heading {
+      margin-top: 10vh;
+      font-size: 2.6rem;
+    }
+    &.small-heading {
+      font-size: 1rem;
+    }
+  }
+  .about-info {
+    grid-template-areas:
+      "bioimage"
+      "bio"
+      "job1"
+      "job2"
+      "job3";
+
+    gap: 15px;
+    .bio-image {
+      width: 230px;
+    }
+    .bio {
+      font-size: 1rem;
+    }
+    .job {
+      padding-right: 15px;
+    }
   }
   .projects {
     grid-template-columns: repeat(1, 1fr);
   }
   .boxes {
     div {
-      font-size: 1.2rem;
+      font-size: 1rem;
     }
   }
 }

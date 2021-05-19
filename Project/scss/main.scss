@@ -195,11 +195,11 @@ header {
 
 .button-light {
   @extend .button;
-  background: darken($primary-color, 50);
+  background: darken($primary-color, 40);
 }
 .button-dark {
   @extend .button;
-  background: lighten($primary-color, 50);
+  background: lighten($primary-color, 40);
 }
 
 #main-footer {
