@@ -269,7 +269,7 @@ header {
 
 @media screen and (max-width: 768px) {
   main h1 {
-    font-size: 4rem; }
+    font-size: 3rem; }
   main {
     align-items: center;
     text-align: center; }
@@ -313,9 +313,10 @@ header {
   h3.small-heading {
     font-size: 1rem; }
   .about-info {
+    grid-template-areas: "bioimage" "bio" "job1" "job2" "job3";
     gap: 15px; }
     .about-info .bio-image {
-      transform: scale(0.8); }
+      width: 230px; }
     .about-info .bio {
       font-size: 1rem; }
     .about-info .job {
