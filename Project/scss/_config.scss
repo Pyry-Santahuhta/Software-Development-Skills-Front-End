@@ -1,9 +1,13 @@
 //Variables
-$primary-color: #edf4ed;
-$secondary-color: #407754;
+
+//Dark primary color
+$primary-color: #1f363d;
+//Light mode primary color
+//$primary-color: #faf3dd;
+$secondary-color: #bf4342;
 $primary-text-color: #f3f7f0;
 $show-home-image: true;
-$home-image: url(../img/rocks.jpg);
+$home-image: url(../img/background.jpg);
 $background-opacity: 0.5;
 
 //Transition mixin
