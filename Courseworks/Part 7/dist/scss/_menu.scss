@@ -1,0 +1,131 @@
+@import "config";
+
+//Hamburger menu
+.menu-button {
+  position: absolute;
+  z-index: 3;
+  right: 35px;
+  top: 35px;
+  cursor: pointer;
+  @include easeOut;
+  .button-line {
+    width: 30px;
+    height: 3px;
+    border-radius: 2px;
+    margin: 0 0 5px 0;
+    background: set-text-color($primary-color);
+    @include easeOut;
+  }
+
+  //rotate hamburger menu into x
+  &.close {
+    transform: rotate(90deg);
+
+    .button-line {
+      &:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+      }
+      &:nth-child(2) {
+        opacity: 0;
+      }
+      &:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -6px);
+      }
+    }
+  }
+}
+
+//Hide menu when not show
+.menu {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  opacity: 1;
+  visibility: hidden;
+
+  //Get things to show up on menu press
+  &.show {
+    visibility: visible;
+  }
+
+  //Styling both sides of the overlay
+  &-brand,
+  &-navigation {
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    justify-content: center;
+    float: left;
+    width: 50%;
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  //Nav coming from top to bottom
+  &-navigation {
+    margin: 0;
+    padding: 0;
+    background: darken($primary-color, 5);
+    list-style: none;
+    transform: translate3d(0, -100%, 0);
+    @include easeOut;
+    &.show {
+      transform: translate3d(0, 0, 0);
+    }
+  }
+
+  //Branding side coming from bottom up
+  &-brand {
+    background: $primary-color;
+    transform: translate3d(0, 100%, 0);
+    @include easeOut;
+    &.show {
+      transform: translate3d(0, 0, 0);
+    }
+    .portrait-image {
+      width: 250px;
+      height: 250px;
+      background: url(../img/portrait.jpg);
+
+      border-radius: 50%;
+      border: solid 3px $secondary-color;
+    }
+  }
+
+  //Nav items coming from right to left
+  .navigation-item {
+    transform: translate3d(2000px, 0, 0);
+    @include easeOut;
+
+    &.show {
+      transform: translate3d(0, 0, 0);
+    }
+
+    &.current > a {
+      color: $secondary-color;
+    }
+  }
+
+  //Link styling
+  .navigation-link {
+    display: inline-block;
+    position: relative;
+    font-size: 2rem;
+    text-transform: uppercase;
+    padding: 1rem 0;
+    font-weight: 300;
+    color: set-text-color($primary-color);
+    text-decoration: none;
+    @include easeOut;
+    &:hover {
+      color: $secondary-color;
+    }
+  }
+}
+
+//Go through nav items one by one to slow their appearance
+@for $i from 1 through 4 {
+  .navigation-item:nth-child(#{$i}) {
+    transition-delay: $i * 0.1s;
+  }
+}
