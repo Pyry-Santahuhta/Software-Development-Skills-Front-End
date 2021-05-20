@@ -94,10 +94,15 @@ header {
 
   .bio {
     display: flex;
+    flex-direction: column;
+    justify-content: center;
     grid-area: bio;
-    font-size: 1.2rem;
-    align-items: center;
-    justify-items: center;
+    h3 {
+      font-size: 2rem;
+    }
+    .p {
+      font-size: 1.2rem;
+    }
   }
 
   .job {
