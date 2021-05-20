@@ -171,10 +171,13 @@ header {
     border: #bf4342 3px solid; }
   .about-info .bio {
     display: flex;
-    grid-area: bio;
-    font-size: 1.2rem;
-    align-items: center;
-    justify-items: center; }
+    flex-direction: column;
+    justify-content: center;
+    grid-area: bio; }
+    .about-info .bio h3 {
+      font-size: 2rem; }
+    .about-info .bio .p {
+      font-size: 1.2rem; }
   .about-info .job {
     background: #28454e;
     border-left: #bf4342 5px solid;
