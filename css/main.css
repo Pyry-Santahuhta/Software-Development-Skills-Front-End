@@ -271,7 +271,7 @@ header {
 
 @media screen and (max-width: 768px) {
   main h1 {
-    font-size: 3rem; }
+    font-size: 2.5rem; }
   main {
     align-items: center;
     text-align: center; }
