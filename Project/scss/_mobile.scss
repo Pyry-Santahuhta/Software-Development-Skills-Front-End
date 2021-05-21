@@ -17,17 +17,22 @@
 }
 //Tablets
 @include mediaMedium {
-  main h1 {
-    font-size: 3rem;
+  h1,
+  h2,
+  h3 {
+    &.large-heading {
+      margin-top: 10vh;
+      font-size: 4rem;
+      line-height: 1;
+      margin-bottom: 1rem;
+    }
+    &.small-heading {
+      font-size: 1.7rem;
+    }
   }
   main {
     align-items: center;
     text-align: center;
-
-    .large-heading {
-      line-height: 1;
-      margin-bottom: 1rem;
-    }
   }
   div.menu-brand {
     height: 25vh;
