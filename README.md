@@ -5,3 +5,5 @@ The different tasks from the tutorial are located in the courseworks/part # fold
 The learning diary can be found in the root folder as well.
 
 Link to deployed website: https://pyry-santahuhta.github.io/Software-Development-Skills-Front-End
+
+Presentation of the portfolio in youtube: https://youtu.be/naIMzSPQpiA
