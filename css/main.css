@@ -270,14 +270,20 @@ header {
     text-align: left; } }
 
 @media screen and (max-width: 768px) {
-  main h1 {
-    font-size: 2.5rem; }
+  h1.large-heading,
+  h2.large-heading,
+  h3.large-heading {
+    margin-top: 10vh;
+    font-size: 4rem;
+    line-height: 1;
+    margin-bottom: 1rem; }
+  h1.small-heading,
+  h2.small-heading,
+  h3.small-heading {
+    font-size: 1.7rem; }
   main {
     align-items: center;
     text-align: center; }
-    main .large-heading {
-      line-height: 1;
-      margin-bottom: 1rem; }
   div.menu-brand {
     height: 25vh;
     transform: translate3d(-100%, 0, 0); }
